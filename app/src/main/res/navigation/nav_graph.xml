@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.app.mostfamouspictures.view.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailPictureFragment"
+            app:destination="@id/detailPictureFragment"
+            />
+        <action
+            android:id="@+id/action_mainFragment_to_detailArtistFragment"
+            app:destination="@id/detailArtistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPictureFragment"
+        android:name="com.app.mostfamouspictures.view.fragment.DetailPictureFragment"
+        android:label="fragment_detail_picture"
+        tools:layout="@layout/fragment_detail_picture" />
+    <fragment
+        android:id="@+id/detailArtistFragment"
+        android:name="com.app.mostfamouspictures.view.fragment.DetailArtistFragment"
+        android:label="fragment_detail_artist"
+        tools:layout="@layout/fragment_detail_artist" />
+</navigation>

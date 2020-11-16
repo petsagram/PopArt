@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="com.app.mostfamouspictures.model.Artist"
+            />
+        <variable
+            name="listener"
+            type="com.app.mostfamouspictures.utils.ItemClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+    android:id="@+id/artist_item_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:elevation="8dp"
+    android:layout_margin="4dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:onClick="@{listener::itemClickListener}"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/artist_id"
+            android:visibility="gone"
+            android:text="@{model.artistId}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ImageView
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           app:profileUrl="@{model.url}"
+           android:layout_marginLeft="10dp"
+           android:layout_centerVertical="true"
+           />
+
+         <ImageView
+            android:id="@+id/first_ram"
+            android:visibility="gone"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/ic_ram"
+            android:layout_alignParentBottom="true"
+            />
+
+         <ImageView
+            android:id="@+id/second_ram"
+            android:visibility="gone"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="13dp"
+            android:background="@drawable/ic_ram"
+            />
+
+         <TextView
+            android:id="@+id/artist_name"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.artistName}"
+            android:layout_centerHorizontal="true"
+            android:theme="@style/ArtistNameTextViewStyle"
+            />
+
+         <TextView
+            android:text="@{model.lifetime}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/artist_name"
+            android:layout_centerHorizontal="true"
+            android:theme="@style/ArtistLongevityTextViewStyle"  />
+
+         </RelativeLayout>
+
+       </androidx.cardview.widget.CardView>
+</layout>
